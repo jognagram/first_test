@@ -9,6 +9,7 @@ test.describe('Wikipedia', () => {
 test.only('Trouve un raton laveur sur wikipedia', async ({ page }) => {
     await page.locator('[placeholder="Rechercher sur Wikipédia"]').click()
     await page.keyboard.type('raton laveur')
+    await page.keyboard.press('Enter')
     await expect(page.locator('#searchform')).toBeVisible()
     await page.keyboard.press('Enter')
     await expect(page.locator('h1').first()).toHaveText('/Raton laveur/')
