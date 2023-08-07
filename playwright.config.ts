@@ -3,6 +3,10 @@ import exp from 'constants'
 
 const config: PlaywrightTestConfig = {
   timeout: 2_000,
+  retries: 1,
+  use: {  
+    trace:  'on-first-retry',
+  },
   projects: [
     {
       name: 'Chromium',
